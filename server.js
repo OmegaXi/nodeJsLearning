@@ -10,7 +10,8 @@ function start(route, handle){
         route(pathname);
 
         response.writeHead(200, {'Content-Type': 'text/plain'});
-        response.write("Hello World\n");
+        var content = route(handle, pathname);
+        response.write(content);
         response.end();
     }
 
